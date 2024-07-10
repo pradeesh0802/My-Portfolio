@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Techstack from "./Techstack";
+import TechIcon from "./TechsIcon";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
+import Toolstack from "./ToolsIcon";
 
 function About() {
   return (
@@ -37,7 +37,7 @@ function About() {
           Professional <strong className="purple">Skillset </strong>
         </h1>
 
-        <Techstack />
+        <TechIcon/>
 
         <h1 className="project-heading">
           <strong className="purple">Tools</strong> I use
