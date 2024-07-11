@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,19 +10,12 @@ const Contact = () => {
   });
   const [state, handleSubmit] = useForm("xqazkrlb");
 
-  const handleResetForm = () => {
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
-
-  if (state.succeeded) {
-    return (
-      <Contact/>
-    );
-  }
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success('Your message has been sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    }
+  }, [state.succeeded]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +27,7 @@ const Contact = () => {
 
   return (
     <div className="form-container">
+      <Toaster position="top-center" />
       <form className="styled-form" onSubmit={handleSubmit}>
         <h2>Contact Me</h2>
         <label htmlFor="name">Name</label>
@@ -41,9 +36,9 @@ const Contact = () => {
           id="name"
           name="name"
           value={formData.name}
-          autoComplete='off'
+          autoComplete="off"
           onChange={handleChange}
-          placeholder='Name'
+          placeholder="Name"
           required
         />
         <label htmlFor="email">Email</label>
@@ -53,8 +48,8 @@ const Contact = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          autoComplete='off'
-          placeholder='Email'
+          autoComplete="off"
+          placeholder="Email"
           required
         />
         <ValidationError 
@@ -68,7 +63,7 @@ const Contact = () => {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder='Message'
+          placeholder="Message"
           required
         />
         <ValidationError 
