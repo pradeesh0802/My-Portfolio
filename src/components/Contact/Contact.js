@@ -12,7 +12,7 @@ const Contact = () => {
 
   useEffect(() => {
     if (state.succeeded) {
-      toast.success('Your message has been sent successfully!');
+      toast.success('Your message has been successfully sent!');
       setFormData({ name: '', email: '', message: '' });
     }
   }, [state.succeeded]);
