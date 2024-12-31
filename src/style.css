@@ -639,6 +639,7 @@ button:focus {
 /* Resume */
 .form-container {
   display: flex;
+  background-image: var(--section-background-color) !important;
   justify-content: center;
   align-items: center;
   height: 100vh;

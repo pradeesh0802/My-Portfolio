@@ -2,11 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import form from "../../Assets/Projects/form.png";
-import suicide from "../../Assets/Projects/suicide.png";
+import TicTacToe from "../../Assets/Projects/Tic-Tac-Toe.png";
 import todo from "../../Assets/Projects/Todo.png";
 
 function Projects() {
@@ -23,12 +19,12 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={form}
+              imgPath={TicTacToe}
               isBlog={false}
-              title="Form Validator"
-              description="A form validator is a tool used in web development to ensure that data submitted through a form meets specific criteria or rules before it is processed or stored. It typically checks for things like required fields being filled out, correct formatting of email addresses or phone numbers, and valid input types (e.g., numbers vs. text)."
-              ghLink="https://github.com/pradeesh0802/Form"
-              demoLink="https://formvalidationpp.netlify.app/"
+              title="Tic-Tac-Toe"
+              description="Developed a classic Tic-Tac-Toe game in React. Created an interactive and user-friendly game with dynamic rendering and state management. Implemented features such as player turns, win conditions, a reset button, and a history tracker to enhance the user experience and provide replayability."
+              ghLink="https://github.com/pradeesh0802/Tic-Tac-Toe"
+              demoLink="https://tic-tac-toe-8l49.onrender.com/"
             />
           </Col>
 
